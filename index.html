@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tia Tay | Desenvolvimento infantil e neurodivergências em Catalão, GO</title>
+<meta name="description" content="Terapias, acompanhamento e reforço escolar para crianças autistas em Catalão, Goiás. Atendimento individual, respeitando o ritmo de cada criança.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fredoka:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#a21f8f; --teal-dark:#5e1252; --mist:#f6ebf5; --paper:#fff;
+  --sun:#d9b8e6; --sun-soft:#f3e6f6; --coral:#a21f8f; --ink:#1a1a1a; --muted:#4a4150;
+  --radius:22px;
+  box-sizing:border-box;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;font-family:"Atkinson Hyperlegible",system-ui,sans-serif;font-size:1.0625rem;line-height:1.65;color:var(--ink);background:var(--paper)}
+h1,h2,h3{font-family:"Fredoka",system-ui,sans-serif;font-weight:600;line-height:1.15;margin:0 0 .6em;color:var(--teal-dark)}
+h1{font-size:clamp(2.2rem,5.5vw,3.6rem)}
+h2{font-size:clamp(1.7rem,3.6vw,2.4rem)}
+h3{font-size:1.25rem;font-weight:500}
+p{margin:0 0 1em;max-width:62ch}
+a{color:var(--teal)}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1100px,100% - 2.5rem);margin-inline:auto}
+section{padding:clamp(3rem,7vw,5.5rem) 0}
+
+/* Cabeçalho */
+header{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid #e3cdea}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.8rem 0}
+.logo{font-family:"Fredoka",sans-serif;font-weight:600;font-size:1.35rem;color:var(--teal-dark);text-decoration:none;display:flex;align-items:center;gap:.5rem}
+.logo img{width:3rem;height:3rem;border-radius:50%;display:block}
+nav ul{display:flex;gap:1.4rem;list-style:none;margin:0;padding:0}
+nav a{text-decoration:none;color:var(--ink);padding:.3rem 0;border-bottom:2px solid transparent}
+nav a:hover{border-color:var(--sun)}
+.btn{display:inline-block;background:var(--teal);color:#fff;text-decoration:none;font-weight:700;padding:.85rem 1.5rem;border-radius:999px;border:2px solid var(--teal);font:inherit;font-weight:700;cursor:pointer;transition:background .2s}
+.btn:hover{background:#7d1670;border-color:#7d1670}
+.btn.alt{background:#fff;color:var(--teal);border:2px solid var(--teal)}
+.btn.alt:hover{background:var(--teal);color:#fff}
+@media(max-width:760px){nav{display:none}}
+
+/* Hero */
+.hero{background:var(--mist);overflow:hidden;position:relative}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:2rem;align-items:center}
+.hero p.lead{font-size:1.2rem;color:var(--muted)}
+.hero .actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.5rem}
+.shapes{position:relative;aspect-ratio:1;max-width:380px;width:100%;margin-inline:auto}
+.shapes span{position:absolute;display:block;animation:float 9s ease-in-out infinite}
+.shapes .a{inset:6% 22% 38% 4%;background:var(--sun);border-radius:58% 42% 55% 45%/50% 55% 45% 50%}
+.shapes .b{inset:40% 3% 6% 30%;background:#fff;border:4px solid var(--teal);border-radius:45% 55% 40% 60%/55% 45% 55% 45%;animation-delay:-3s}
+.shapes .c{inset:52% 66% 14% 6%;background:var(--coral);border-radius:50%;animation-delay:-6s}
+.shapes .d{inset:10% 4% 74% 70%;background:var(--teal-dark);border-radius:50%;animation-delay:-4s}
+@keyframes float{50%{transform:translateY(-12px)}}
+@media(max-width:820px){.hero .wrap{grid-template-columns:1fr}.shapes{max-width:240px}}
+
+/* Serviços */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;margin-top:2rem}
+.card{background:#fff;border:2px solid #e3cdea;border-radius:var(--radius);padding:1.5rem}
+.card:nth-child(3n+1){border-top:8px solid var(--sun)}
+.card:nth-child(3n+2){border-top:8px solid var(--teal)}
+.card:nth-child(3n){border-top:8px solid var(--coral)}
+.card p{color:var(--muted);margin:0}
+
+/* Como funciona */
+.steps{background:var(--teal-dark);color:#fff}
+.steps h2{color:#fff}
+.steps ol{list-style:none;margin:2rem 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;counter-reset:s}
+.steps li{counter-increment:s;padding-left:3.4rem;position:relative}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:2.5rem;height:2.5rem;border-radius:50%;background:var(--sun);color:var(--teal-dark);font-family:"Fredoka",sans-serif;font-weight:600;display:grid;place-items:center}
+.steps h3{color:#fff;margin-bottom:.3em}
+.steps p{margin:0;color:#ecd9f0}
+
+/* Abordagem */
+.about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.about ul{margin:0;padding:0;list-style:none}
+.about li{padding:.9rem 0 .9rem 2rem;border-bottom:1px solid #e3cdea;position:relative}
+.about li::before{content:"";position:absolute;left:0;top:1.25rem;width:.9rem;height:.9rem;border-radius:50%;background:var(--sun)}
+@media(max-width:820px){.about .wrap{grid-template-columns:1fr;gap:1.5rem}}
+
+/* FAQ */
+.faq{background:var(--mist)}
+details{background:#fff;border-radius:16px;margin-bottom:.8rem;padding:1rem 1.3rem;max-width:760px}
+summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--teal)}
+details[open] summary::after{content:"–"}
+details p{margin:.8rem 0 0;color:var(--muted)}
+
+/* Contato */
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+form{display:grid;gap:1rem}
+label{font-weight:700;display:grid;gap:.35rem}
+input,select,textarea{font:inherit;padding:.75rem .9rem;border:2px solid #888;border-radius:12px;background:#fff;color:var(--ink)}
+textarea{min-height:110px;resize:vertical}
+.info p{margin-bottom:.6em}
+.note{font-size:.9rem;color:var(--muted)}
+@media(max-width:820px){.contact .wrap{grid-template-columns:1fr;gap:2rem}}
+
+footer{background:var(--teal-dark);color:#fff;padding:2rem 0;font-size:.95rem}
+footer p{margin:0 auto;max-width:none}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#inicio"><img src="data:image/jpeg;base64,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" alt="Logo Tia Tay">Tia Tay</a>
+    <nav aria-label="Principal">
+      <ul>
+        <li><a href="#servicos">Atendimentos</a></li>
+        <li><a href="#como-funciona">Como funciona</a></li>
+        <li><a href="#abordagem">Nossa abordagem</a></li>
+        <li><a href="#duvidas">Dúvidas</a></li>
+      </ul>
+    </nav>
+    <a class="btn alt" href="#contato">Agendar conversa</a>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <div>
+      <h1>Cada criança aprende no seu tempo. Nós acompanhamos.</h1>
+      <p class="lead">Desenvolvimento infantil e neurodivergências em Catalão, Goiás. Terapias e reforço escolar para crianças autistas, com atendimento individual e carinho.</p>
+      <div class="actions">
+        <a class="btn" href="#contato">Agendar uma conversa</a>
+        <a class="btn alt" href="#servicos">Ver atendimentos</a>
+      </div>
+    </div>
+    <div class="shapes" aria-hidden="true"><span class="a"></span><span class="b"></span><span class="c"></span><span class="d"></span></div>
+  </div>
+</section>
+
+<section id="servicos">
+  <div class="wrap">
+    <h2>Atendimentos</h2>
+    <p>Montamos o plano a partir da avaliação de cada criança. Você pode começar por uma área e incluir outras depois.</p>
+    <div class="grid">
+      <article class="card"><h3>Terapia comportamental (ABA)</h3><p>Sessões individuais para desenvolver autonomia, comunicação e rotina diária.</p></article>
+      <article class="card"><h3>Terapia ocupacional</h3><p>Trabalho com coordenação, sensorialidade e atividades do dia a dia.</p></article>
+      <article class="card"><h3>Psicologia</h3><p>Acompanhamento emocional da criança e orientação para a família.</p></article>
+      <article class="card"><h3>Psicopedagogia e reforço escolar</h3><p>Aulas de reforço adaptadas ao jeito de aprender de cada aluno, alinhadas com a escola.</p></article>
+    </div>
+    <p class="note" style="margin-top:1.5rem">Edite esta lista para mostrar só os atendimentos que a clínica realmente oferece.</p>
+  </div>
+</section>
+
+<section class="steps" id="como-funciona">
+  <div class="wrap">
+    <h2>Como funciona</h2>
+    <ol>
+      <li><h3>Conversa inicial</h3><p>Você conta a história da criança, suas dúvidas e o que espera do acompanhamento.</p></li>
+      <li><h3>Avaliação</h3><p>A equipe conhece a criança em um ambiente calmo e no tempo dela.</p></li>
+      <li><h3>Plano individual</h3><p>Definimos objetivos e os atendimentos, e explicamos tudo à família.</p></li>
+      <li><h3>Acompanhamento</h3><p>Sessões regulares, com retorno periódico aos pais e à escola.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="about" id="abordagem">
+  <div class="wrap">
+    <div>
+      <h2>Nossa abordagem</h2>
+      <p>O autismo é diferente em cada pessoa. Por isso o atendimento parte do que a criança já faz bem, com respeito aos seus limites e às suas preferências.</p>
+    </div>
+    <ul>
+      <li><strong>Ambiente acolhedor:</strong> salas tranquilas, com poucos estímulos e rotina previsível.</li>
+      <li><strong>Família junto:</strong> orientamos os pais para que o aprendizado continue em casa.</li>
+      <li><strong>Escola conectada:</strong> conversamos com professores para manter as estratégias coerentes.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="faq" id="duvidas">
+  <div class="wrap">
+    <h2>Dúvidas frequentes</h2>
+    <details><summary>Preciso de diagnóstico para começar?</summary><p>Não necessariamente. Também atendemos crianças em investigação. Na conversa inicial, explicamos o melhor caminho.</p></details>
+    <details><summary>Qual a idade atendida?</summary><p>Informe aqui a faixa etária atendida pela clínica.</p></details>
+    <details><summary>Atendem por plano de saúde?</summary><p>Informe aqui os convênios aceitos e os valores particulares, se desejar.</p></details>
+    <details><summary>Os pais acompanham as sessões?</summary><p>Sim, quando for útil. Combinamos com a família o melhor formato para cada fase.</p></details>
+  </div>
+</section>
+
+<section class="contact" id="contato">
+  <div class="wrap">
+    <div class="info">
+      <h2>Vamos conversar?</h2>
+      <p>Preencha o formulário e continue a conversa pelo WhatsApp da Tia Tay.</p>
+      <p><strong>Endereço:</strong> R. Honório C. Lima, 5 - Santa Mônica, Catalão, GO</p>
+      <p><strong>Telefone / WhatsApp:</strong> <a href="https://wa.me/5564999558654">(64) 99955-8654</a></p>
+      <p><strong>E-mail:</strong> <a href="mailto:taynara23rsilva@gmail.com">taynara23rsilva@gmail.com</a></p>
+    </div>
+    <form id="form" aria-label="Formulário de contato">
+      <label>Seu nome<input name="nome" required autocomplete="name"></label>
+      <label>Idade da criança<input name="idade" inputmode="numeric" placeholder="Ex.: 6 anos"></label>
+      <label>Do que você precisa?
+        <select name="interesse">
+          <option>Terapias</option>
+          <option>Reforço escolar</option>
+          <option>Avaliação inicial</option>
+          <option>Outro assunto</option>
+        </select>
+      </label>
+      <label>Mensagem (opcional)<textarea name="msg"></textarea></label>
+      <button class="btn" type="submit">Continuar no WhatsApp</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap"><p>© <span id="ano"></span> Tia Tay Desenvolvimento Infantil · Catalão, Goiás. Este site não substitui avaliação profissional.</p></div>
+</footer>
+
+<script>
+  // WhatsApp: 55 + DDD + número
+  var WHATSAPP = "5564999558654";
+  document.getElementById("ano").textContent = new Date().getFullYear();
+  document.getElementById("form").addEventListener("submit", function(e){
+    e.preventDefault();
+    var f = e.target;
+    var t = "Olá! Me chamo " + f.nome.value + "." +
+      (f.idade.value ? " Meu filho(a) tem " + f.idade.value + "." : "") +
+      " Tenho interesse em: " + f.interesse.value + "." +
+      (f.msg.value ? " " + f.msg.value : "");
+    window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(t), "_blank", "noopener");
+  });
+</script>
+</body>
+</html>
