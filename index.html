@@ -197,7 +197,8 @@ footer p{margin:0 auto;max-width:none}
     </div>
     <form id="form" aria-label="Formulário de contato">
       <label>Seu nome<input name="nome" required autocomplete="name"></label>
-      <label>Idade da criança<input name="idade" inputmode="numeric" placeholder="Ex.: 6 anos"></label>
+      <label>Nome da criança<input name="crianca" required></label>
+      <label>Idade da criança<input name="idade" placeholder="Ex.: 6 anos"></label>
       <label>Do que você precisa?
         <select name="interesse">
           <option>Terapias</option>
@@ -224,8 +225,10 @@ footer p{margin:0 auto;max-width:none}
   document.getElementById("form").addEventListener("submit", function(e){
     e.preventDefault();
     var f = e.target;
+    var idade = f.idade.value.trim();
+    if (/^\d+$/.test(idade)) idade += (idade === "1" ? " ano" : " anos");
     var t = "Olá! Me chamo " + f.nome.value + "." +
-      (f.idade.value ? " Meu filho(a) tem " + f.idade.value + "." : "") +
+      " Meu filho(a) " + f.crianca.value + (idade ? " tem " + idade : "") + "." +
       " Tenho interesse em: " + f.interesse.value + "." +
       (f.msg.value ? " " + f.msg.value : "");
     window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(t), "_blank", "noopener");
